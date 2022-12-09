@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head> 
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>arts.codes</title>
+        <link rel="icon" href="img/artsdotcodeslogo.png" type="image/gif">
+        
+        <!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+     <link rel="stylesheet" type="text/css" href="/style.css">
+      <link href="https://fonts.googleapis.com/css?family=Libre+Franklin:500|Playfair+Display|Raleway:300" rel="stylesheet">
+  </head>
+
+
+    <body>
+         <div id="log"><img id="logo" href="/img/logo2.jpg"></div>
+         <header id="h">
+
+          <nav id="nav">
+              <!-- fade out for mobile menu -->
+              <div id="fade"></div>
+          <a id="nav1" href="#nav"></a>
+          <ul class="nav">
+            <li><a href="/index.html" rel="author">Home</a></li>
+           <li class="dropdown" ><a id="articles">Projects</a>
+           <ul class="dropcont" id='dd'>
+              <li><a href="/src/glassmenagerie/glassmenagerie.html">Glass Menagerie</a></li>
+               <li><a href="/src/hacek/hacek.html">háček</a></li>
+               <li><a target="_blank" href="/other/ResonantBook.pdf">Resonant Structures</a></li>  
+           </ul>
+           </li>
+
+            <li><a href="about.html" rel="author">About</a></li>
+
+              <li><a href="other/more.html">News</a></li>
+                <li class="dropdown" ><a id="articles.html">Articles</a>
+           </li>
+              <li id="close"><a href="#nav1">X</a></li>
+          </ul>
+          </nav>
+      </header>
+     <div class="cont">
+<div class="cover"></div>
+
+      <p class="arttop">Articles</p>
+       <main id="box">
+            <!--main content-->
+           <article>
+          <ul >
+               <li class="art"><a target="_blank" href="/articles/vol1/article0/article.html">Perverting Correctness</a></li>
+               <li class="art"><a target="_blank" href="/articles/vol1/article1/article.html">Patching VR</a></li>
+               <li class="art"><a target="_blank" href="/articles/vol1/article2/article.html">Photocells as switches</a></li>
+               <li class="art"><a target="_blank" href="/articles/vol1/article3/article.html">Andrea Wolf</a></li>
+               <li class="art"><a target="_blank" href="/articles/vol1/article4/article.html">Elbphilharmonie</a></li>
+               <li class="art"><a target="_blank" href="/articles/vol1/article5/article.html">Analog Computing</a></li>
+               <li class="art"><a target="_blank" href="/articles/vol1/article6/article.html">Surya Mattu</a></li>
+               <li class="art"><a target="_blank" href="/articles/vol1/article7/article.html">Syed Salahuddin</a></li>
+               <li class="art"><a target="_blank" href="/articles/vol1/article8/article.html">Driscoll/Mumma</a></li>
+               <li class="art"><a target="_blank" href="/articles/vol1/article9/article.html">Ursula Endlicher</a></li>
+           </ul>
+             <!--<section>
+                 <p class="title"><b></b></p><img src="img/" class="img2">
+                 <p></p>
+               </section>-->
+           </article>
+              <footer>
+          <a class="email" href="mailto:team@arts.codes?subject=Contact">team@arts.codes</a>
+            <a class="social" href="https://www.instagram.com/arts.codes/"><img src="/img/Instagram.png"> </a>
+            <a class="social" href="https://www.facebook.com/ArtsCodes-158330344691195/"><img src="/img/Facebook.png"></a>
+            <a class="social" href="https://twitter.com/arts_codes"><img src="/img/Twitter.png"></a>
+        </footer>
+        </main>
+        </div>
+        <nav id="vnav">
+            <ul>
+                <li><a id="vclose" href="#vcont">vol 1</a></li>
+                <ul id="vcont">
+                <li><a href="../articles/vol0/vol0.html">vol 0</a></li>
+                <li><a href="../index.html">X</a></li>
+                </ul>
+            </ul>
+        </nav>
+    </body>
+   </html>
+<script>
+
+var n = document.getElementById('log');
+var open = false;
+var aopen = false;
+var popen = false;
+//n.onclick = open ? peekabye : peekaboo;
+
+n.addEventListener("click", function(e){
+
+  e.preventDefault;
+  var x = document.getElementById("h");
+
+
+  if (!open){
+  // -> removing the class
+   n.classList.remove("navbuttonanimation");
+   n.classList.remove("navbuttonanimationrev");
+
+   x.classList.remove("navmenuanimation");
+   x.classList.remove("navmenuanimationrev");
+
+   void x.offsetWidth;
+   void n.offsetWidth;
+
+   n.classList.add("navbuttonanimation");
+   x.classList.add("navmenuanimation");
+
+   x.style.right="0em";
+   n.style.right = "20em";
+
+   open = true;
+  }else{
+   n.classList.remove("navbuttonanimationrev");
+   n.classList.remove("navbuttonanimation");
+
+   x.classList.remove("navmenuanimation");
+   x.classList.remove("navmenuanimationrev");
+
+   void n.offsetWidth;
+   void x.offsetWidth;
+
+   n.classList.add("navbuttonanimationrev");
+   x.classList.add("navmenuanimationrev");
+
+   n.style.right = "1em";
+   x.style.right = "-20em";
+   open = false;
+    }
+}, false);
+
+var articles = document.getElementById('articles');
+var projects = document.getElementById('projects');
+
+articles.addEventListener("click",function(e){
+    e.preventDefault;
+    aopen = aopen? false:true;
+   var drop = document.getElementById("dd");
+    drop.style.display = aopen ? 'block':'none';
+},false);
+
+var motionheader = document.getElementById('h');
+
+
+</script>

@@ -1,0 +1,221 @@
+ <!doctype html>
+<html lang="en">
+  <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>arts.codes</title>
+        <link rel="icon" href="/img/artsdotcodeslogo.png" type="image/gif">
+        <!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+    
+    <!--social media sharing info-->
+      <meta property="og:url"           content="http://arts.codes/articles/vol1/article8/article.html" />
+      <meta property="og:type"          content="article" />
+      <meta property="og:title"         content="" />
+      <meta property="og:description"   content="" />
+      <meta property="og:image"         content="http://arts.codes/articles/vol1/article7/img/0.jpg" />
+    
+     <!--<link rel="stylesheet" type="text/css" href="/style.css">-->
+      <link rel="stylesheet" type="text/css" href="style.css">
+     <link href="https://fonts.googleapis.com/css?family=Libre+Franklin:500|Playfair+Display|Raleway:300" rel="stylesheet">
+  </head>
+    
+    <body>
+         <div id="log"><img id="logo" href="/img/logo2.jpg"></div>
+         <header id="h">
+
+          <nav id="nav">
+              <!-- fade out for mobile menu -->
+              <div id="fade"></div>
+          <a id="nav1" href="#nav"></a>
+          <ul class="nav">
+            <li><a href="/index.html" rel="author">Home</a></li>
+           <li class="dropdown" ><a id="articles">Projects</a>
+           <ul class="dropcont" id='dd'>
+              <li><a href="/src/glassmenagerie/glassmenagerie.html">Glass Menagerie</a></li>
+               <li><a href="/src/hacek/hacek.html">háček</a></li>
+               <li><a target="_blank" href="/other/ResonantBook.pdf">Resonant Structures</a></li>  
+           </ul>
+           </li>
+
+            <li><a href="about.html" rel="author">About</a></li>
+
+              <li><a href="/other/more.html">News</a></li>
+              <li ><a href="/src/articles.html">Articles</a></li>
+            
+          </ul>
+          </nav>
+      </header>
+              <article class="img">
+            <div class="imgs"> 
+               <div style="background-image:url('img/0.jpg')">
+                </div>
+                <p>Image 1/6</p>
+                <cite></cite>
+            </div>
+            <div class="imgs"> 
+               <div style="background-image:url('img/1.png')">
+                </div>
+                <p>Image 2/6</p>
+                <cite></cite>
+            </div>
+                  <div class="imgs"> 
+               <div style="background-image:url('img/2.png')">
+                </div>
+                <p>Image 3/6</p>
+                <cite></cite>
+            </div>
+                  <div class="imgs"> 
+               <div style="background-image:url('img/3.png')">
+                </div>
+                <p>Image 4/6</p>
+                <cite></cite>
+            </div>
+                  <div class="imgs"> 
+               <div style="background-image:url('img/4.png')">
+                </div>
+                <p>Image 5/6</p>
+                <cite></cite>
+            </div>
+                  <div class="imgs"> 
+               <div style="background-image:url('img/5.png')">
+                </div>
+                <p>Image 6/6</p>
+                <cite></cite>
+            </div>
+                <button class="left" onclick="plusDivs(-1)">&#10094;</button>
+                <button class="right" onclick="plusDivs(1)">&#10095;</button>
+            </article>
+           <main id="box">
+           
+           <article class="text">
+             
+               <p class="title">Glass Menagerie</p>
+               <p class="subhead"></p>
+               <div class="textwrap">
+               <p>glass menagerie is an artistic rendering of Nanoscience data in a three dimensional installation and a
+virtual reality experience. menagerie is also a platform for creating frameworks so that scientists can
+create their own forms and virtual reality using unique data sets. Art and Science have a long
+relationship in terms of innovating research and the application of new technologies. menagerie is
+meant to inspire and also innovate ways in which scientists and others can perceive and render data
+narratives. The tiny gallery is transportable, as well as the virtual reality; workshops can take place in
+tandem with the exhibits— so the experience is mobile and creates a tremendous outreach and
+educational opportunity. And because we are creating a framework to reproduce three dimensional and
+virtual reality art it’s possible pieces and additions can be added and narratives in terms of the actual
+data presented might be able to shift.</p>
+
+            <p><quote class="popquote"><b></b></quote></p>
+            <p><quote class="popquote2"><b></b></quote></p>
+            <p><quote class="sub"><!--heading--></quote><br><!-- text --> </p>
+
+            <p class="quote"><i></i><br></p>
+
+             <section class="credit">
+           <cite><!--name--><br><!--Title--><br>arts.codes Vol <!-- # --></cite><br> 
+           <time datetime="2017-12-01"><!--January 12th 2017--></time> 
+          </section>
+        <div Class="footer">
+            <a class="email" href="mailto:team@arts.codes?subject=Contact">team@arts.codes</a>
+            <a class="social" href="https://www.instagram.com/arts.codes/"><img src="img/Instagram.png"> </a>
+            <a class="social" href="https://www.facebook.com/ArtsCodes-158330344691195/"><img src="img/Facebook.png"></a>
+            <a class="social" href="https://twitter.com/arts_codes"><img src="img/Twitter.png"></a>
+               </div>
+          </div>
+           </article>             
+        </main>
+        <!--switch volumes-->
+        <nav id="vnav">
+            <ul>
+                <li><a id="vclose" href="#vcont">vol 1</a></li>
+                <ul id="vcont">
+                <li><a href="../../../articles/vol0/vol0.html">vol 0</a></li>
+                <li><a href="#vclose">X</a></li>
+                </ul>
+            </ul>
+        </nav>
+        <!--image carsol-->
+        <script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("imgs");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+
+var na = document.getElementById('log');
+var open = false;
+var aopen = false;
+var popen = false;
+//n.onclick = open ? peekabye : peekaboo;
+
+na.addEventListener("click", function(e){
+
+  e.preventDefault;
+  var x = document.getElementById("h");
+
+
+  if (!open){
+  // -> removing the class
+   na.classList.remove("navbuttonanimation");
+   na.classList.remove("navbuttonanimationrev");
+
+   x.classList.remove("navmenuanimation");
+   x.classList.remove("navmenuanimationrev");
+
+   void x.offsetWidth;
+   void na.offsetWidth;
+
+   na.classList.add("navbuttonanimation");
+   x.classList.add("navmenuanimation");
+
+   x.style.right="0em";
+   na.style.right = "20em";
+
+   open = true;
+  }else{
+   na.classList.remove("navbuttonanimationrev");
+   na.classList.remove("navbuttonanimation");
+
+   x.classList.remove("navmenuanimation");
+   x.classList.remove("navmenuanimationrev");
+
+   void na.offsetWidth;
+   void x.offsetWidth;
+
+   na.classList.add("navbuttonanimationrev");
+   x.classList.add("navmenuanimationrev");
+
+   na.style.right = "1em";
+   x.style.right = "-20em";
+   open = false;
+    }
+}, false);
+
+var articles = document.getElementById('articles');
+var projects = document.getElementById('projects');
+
+articles.addEventListener("click",function(e){
+    e.preventDefault;
+    aopen = aopen? false:true;
+   var drop = document.getElementById("dd");
+    drop.style.display = aopen ? 'block':'none';
+},false);
+
+var motionheader = document.getElementById('h');
+
+
+</script>
+    </body>
+   </html>

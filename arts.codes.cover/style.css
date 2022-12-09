@@ -1,0 +1,342 @@
+html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var,b, u, i, center,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,time, mark, audio, video {margin: 0;padding: 0;border: 0; font-size: 90%;font: inherit;vertical-align: baseline;}/* HTML5 display-role reset for older browsers */article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block;}body {line-height: 1;}ol, ul {list-style: none;}blockquote, q {quotes: none;}blockquote:before, blockquote:after,q:before, q:after {content: '';content: none;}table {border-collapse: collapse;border-spacing: 0;}
+
+body{
+    font-family: 'Raleway', sans-serif;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    background-color: #ffffff;
+    width: 100%;
+    height: 100%;
+}
+#logo{
+    float: left;
+    width: 4em;
+    height: 5em;
+    background: url(img/logo2.jpg) no-repeat center ;
+    background-size: 6em 7em;
+    border: 0px;
+    border-color: black;
+	display: block;
+    z-index: 70;
+}
+#nav{
+    
+    float: center;
+    padding-top: .9em;
+    padding-right: 2.5em;
+}
+.nav{
+    list-style-type: none;
+    margin: 0;
+    background-color: #131418;
+    font-family: 'Raleway', sans-serif;
+}
+.nav li{
+    display: wrap;
+}
+.nav li a{
+    display: block;
+    color: #95969D;
+    text-decoration: none;
+    padding: 1.4em 1em 1.4em .5em;
+    text-align: center;
+    cursor: pointer;
+}
+.nav li a:hover{
+    color: #585858;
+}
+.dropcont{
+    display: none;
+    position: relative;
+    padding: 0;
+    list-style-type: none;
+}
+.dropcont li a{
+    background-color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    padding: 1.5em;
+    width: 10em;
+    color: #131418
+}
+.space{
+    position:relative;
+    height:25px;
+}
+.row{
+    position: relative;
+    left:-5%;
+    content: "";
+    display:flex;
+    clear: both;
+    width:110%;
+}
+.col{
+   float: left;
+    width: 33%;
+    padding: 2px;
+}
+.col p{
+    justify-content: space-around;
+    font-size: .9em;
+}
+
+#close{
+    display: none;
+}
+#active a{
+    color: #6074a2;
+}
+
+#log{
+    display:block;
+    position: fixed;
+    top: 10%;
+    right: 1em;
+    background-color: #131418;
+    width: 5em;
+    height: 5em; 
+    z-index: 50;
+    color: #95969D;
+}
+
+header{
+    display:block;
+    position: fixed;
+    top: 10%;
+    right: -20em;
+    background-color: #131418;
+    width: 20em;
+    height: auto; 
+    z-index: 50;
+    color: #95969D;
+}
+
+.navbuttonanimation{
+    animation:navbutton .75s ;
+}
+.navmenuanimation{
+    animation:navmenu .75s ;
+}
+.navmenuanimationrev{
+    animation:navmenu .75s  reverse ;
+}
+.navbuttonanimationrev{
+    animation:navbutton .75s  reverse;
+}
+@keyframes navbutton {
+    from {right: 1em;}
+    to {right: 20em;}
+}
+
+
+@keyframes navmenu {
+    from {right: -20em;}
+    to {right: 0em;}
+}
+#box{
+    background-color: #ffffff;
+    width: 90%;
+    min-height: 70%;
+    position: absolute;
+    top: 5.5em;
+    left: 5%;
+    right: 5%;
+    padding-bottom: 6em;
+}
+.cwrapper{
+    position: relative;
+    height: 80%;
+    width 100%;
+}
+.cwrapper img{
+    display: block;
+    margin: auto;
+}
+img[usemap] {
+		border: none;
+		height: auto;
+		max-width: 80%;
+	}
+cite{
+    display: none;
+    color: #ffff;
+    float: left;
+    width: 10em;
+    margin: 0;
+}
+.mob{
+    display: none;
+}
+footer{
+    position: absolute;
+    bottom: 0;
+    height: 5em;
+    width: 100%;
+    background-color: #ffffff;
+    text-align: center;
+}
+.social{
+    display: inline-block;
+    position: relative;
+    top: .8em;
+}
+.social img{
+    width: 2.3em;
+}
+.email{
+    padding: 1em;
+    border-right: .02em solid;
+    text-decoration: none;
+    color: #131418;
+}
+.top{
+    font-family:  sans-serif;
+    margin: 0;
+    padding: 0;
+    
+    top: 2em;
+    
+    font-size: 4em;
+    width: 100%;
+    color: #6074a2;
+}
+.arttop{
+    font-family:  sans-serif;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    top: -2em;
+    
+    font-size: 4em;
+    width: 100%;
+    color: white;
+}
+.cover{
+    background-size: cover;
+    background-color: black;
+    background-image:url("/img/7.png"); 
+    width:100%;
+    height: 300px;
+}
+#box{
+    background-color: #ffffff;
+    width: 90%;
+    min-height: 70%;
+    position: absolute;
+    top: 15em;
+    left: 5%;
+    right: 5%;
+    padding-bottom: 6em;
+}
+.aboutwrap{
+    width: 85%;
+    position: relative;
+    left: 7.5%
+}
+.art {
+  font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
+  border-bottom: 1px solid #ccc;
+}
+.art a:hover {
+  font-size: 30px;
+  background: #f6f6f6;
+}
+.art a {
+  text-decoration: none;
+  color: #000;
+  -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+  transition: font-size 0.3s ease, background-color 0.3s ease;
+  display: block;
+  width: 100%;
+}
+.title{
+    font-family: 'Raleway', serif;
+    margin: 0;
+    padding: 0;
+    font-size: 1.4em;
+    color: #6074a2;
+    border: none;
+    text-indent: 0;
+}
+.img1{
+    width: 16em;
+    padding: .5em;
+    float: left;
+}
+
+#vnav{
+    font-family: 'Raleway', sans-serif;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    margin: 0;
+    background-color: #131418;
+    padding: 0;
+}
+
+#vnav ul{
+    list-style-type: none;
+    margin: 0;
+    padding:0
+} 
+#vnav li{
+    display: inline-block;
+    font-size: .9em;
+}
+#vnav li a{
+    color: #95969D;
+    display: block;
+    padding: .7em;
+    text-decoration: none;
+}
+#vnav li a:hover{
+    color: #6074a2;
+}
+#vcont{
+    padding: 0;
+    margin: 0;
+    display: none;
+}
+#vcont:target{
+    display: inline-block;
+}
+#vclose:target #vcont{
+    display: none;
+}
+@media only screen and (max-width : 700px) {
+    html, body {
+    max-width: 100%;
+    
+}
+  
+    img[usemap] {
+		border: none;
+		height: auto;
+		max-width: 100%;
+		width: auto;
+	}
+    .cpu{
+        display: none;
+    }
+    .mob{
+        display: block;
+    }
+    .row{
+        display: inline-block;
+    }
+    .img1{
+    width: 100%;
+    padding: .5em;
+    float: left;
+}
+    .col{
+    float: left;
+    width: 100%;
+    padding: 2px;
+}
+}

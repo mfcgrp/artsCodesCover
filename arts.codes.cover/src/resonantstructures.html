@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>arts.codes</title>
+        <link rel="icon" href="img/artsdotcodeslogo.png" type="image/gif">
+        <!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+    
+    <!--social media sharing info-->
+      <meta property="og:url"           content="http://arts.codes/articles/vol1/article8/article.html" />
+      <meta property="og:type"          content="article" />
+      <meta property="og:title"         content="" />
+      <meta property="og:description"   content="" />
+      <meta property="og:image"         content="http://arts.codes/articles/vol1/article7/img/0.jpg" />
+    
+     <link rel="stylesheet" type="text/css" href="style.css">
+     <link href="https://fonts.googleapis.com/css?family=Libre+Franklin:500|Playfair+Display|Raleway:300" rel="stylesheet">
+  </head>
+    
+    <body>
+      <header>
+          <a href="../../../index.html" id="logo"></a>
+           <nav id="nav">
+          <a id="navi"></a>
+          <ul class="nav">
+           <li class="dropdown"><a>Articles</a>
+           <ul class="dropcont">
+               <li><a href="../../../articles/vol1/article0/article.html"><!--article name--></a></li>
+               <li><a href="../../../articles/vol1/article1/article.html"><!--article name--></a></li>
+               <li><a href="../../../articles/vol1/article2/article.html"><!--article name--></a></li>
+               <li><a href="../../../articles/vol1/article3/article.html"><!--article name--></a></li>
+               <li><a href="../../../articles/vol1/article4/article.html"><!--article name--></a></li>
+               <li><a href="../../../articles/vol1/article5/article.html"><!--article name--></a></li>
+               <li><a href="../../../articles/vol1/article6/article.html"><!--article name--></a></li>
+           </ul>
+           </li>
+           <li><a href="../../../blog/blog.html">Blog</a></li>
+            <li><a href="../../../about/about.html" rel="author">About</a></li>
+              <li><a href="https://github.com/artsdotcodes">Framework</a></li>
+              <li><a href="../../../other/more.html">More</a></li>
+          </ul>
+          </nav>
+      </header>
+              <article class="img">
+            <div class="imgs"> 
+               <div style="background-image:url('img/0.jpg')">
+                </div>
+                <p>Image 1/2</p>
+                <cite></cite>
+            </div>
+            <div class="imgs"> 
+               <div style="background-image:url('img/1.jpg')">
+                </div>
+                <p>Image 2/2</p>
+                <cite></cite>
+            </div>
+                <button class="left" onclick="plusDivs(-1)">&#10094;</button>
+                <button class="right" onclick="plusDivs(1)">&#10095;</button>
+            </article>
+           <main id="box">
+            <div class="cwrap"> 
+             <div id="back" class="cpage">
+              <a href=""><!--previous article linkhere --><img src="img/back.png" title="Previous"><i>Previous</i></a>
+              </div>
+              <div id="for" class="cpage">
+              <a href=""><!--next artcile linkhere --><img src="img/forward.png" title="Next"><i>Next</i></a>
+              </div>
+              </div>
+           <article class="text">
+             
+               <p class="title"></p>
+               <p class="subhead"></p>
+               <div class="textwrap">
+               <p></p>
+
+            <p><quote class="popquote"><b></b></quote></p>
+            <p><quote class="popquote2"><b></b></quote></p>
+            <p><quote class="sub"><!--heading--></quote><br><!-- text --> </p>
+
+            <p class="quote"><i></i><br></p>
+
+             <section class="credit">
+           <cite><!--name--><br><!--Title--><br>arts.codes Vol <!-- # --></cite><br> 
+           <time datetime="2017-12-01"><!--January 12th 2017--></time> 
+          </section>
+        <div Class="footer">
+            <a class="email" href="mailto:team@arts.codes?subject=Contact">team@arts.codes</a>
+            <a class="social" href="https://www.instagram.com/arts.codes/"><img src="img/Instagram.png"> </a>
+            <a class="social" href="https://www.facebook.com/ArtsCodes-158330344691195/"><img src="img/Facebook.png"></a>
+            <a class="social" href="https://twitter.com/arts_codes"><img src="img/Twitter.png"></a>
+               </div>
+          </div>
+           </article>             
+        </main>
+        <!--switch volumes-->
+        <nav id="vnav">
+            <ul>
+                <li><a id="vclose" href="#vcont">vol 1</a></li>
+                <ul id="vcont">
+                <li><a href="../../../articles/vol0/vol0.html">vol 0</a></li>
+                <li><a href="#vclose">X</a></li>
+                </ul>
+            </ul>
+        </nav>
+        <!--image carsol-->
+        <script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("imgs");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+</script>
+    </body>
+   </html>

@@ -1,0 +1,442 @@
+html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var,b, u, i, center,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,time, mark, audio, video {margin: 0;padding: 0;border: 0; font-size: 90%;font: inherit;vertical-align: baseline;}/* HTML5 display-role reset for older browsers */article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block;}body {line-height: 1;}ol, ul {list-style: none;}blockquote, q {quotes: none;}blockquote:before, blockquote:after,q:before, q:after {content: '';content: none;}table {border-collapse: collapse;border-spacing: 0;}
+
+body{
+    font-family: sans-serif;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    background-color: #ffffff;
+    width: 100%;
+    height: 100%;
+    overflow-y: hidden;
+}
+#logo{
+    float: right;
+    right: 2em;
+    width: 5em;
+    height: 5em;
+    background: url(img/logo2.jpg) no-repeat right;
+    background-size: 5em 5em;
+    border: none !important;
+	display: block;
+    z-index: 70;
+}
+
+.cwrap{
+    position: fixed;
+    top:5em;
+    right: 2% !important;
+    width: 36%;
+    height: 5em;
+    box-shadow: 0px 20px 19px white;
+    background-color: #ffffff;
+    z-index: 40;
+}
+.cpage{
+    width: 6.5em;
+    height: 3em;
+    font-family: 'Raleway', sans-serif;
+}
+.cpage:hover{
+    cursor: pointer;
+}
+
+.cpage img{
+    width: 3em;
+    margin: 0;
+    padding: 0; 
+}
+.cpage a{
+    display: block;
+    color: #000000;
+    text-decoration: none;
+}
+#back{
+    position: absolute;
+    top: 1em;
+}
+#back i{
+    position: absolute;
+    top: 1em;
+    right: 0;
+}
+#for i{
+    position: absolute;
+    top: 1em;
+    left: 1.5em;
+}
+#for img{
+    position: relative;
+    left: 50%;
+}
+#for{
+    position: absolute;
+    top: 1em;
+    right: 0;
+}
+#box{
+    background-color: #ffffff;
+    width: 40%;
+    height: 73.8vh;
+    position: absolute;
+    top: 5em;
+    right: 0 !important;
+    padding-top: 3em;
+    padding-bottom: 5em;
+    overflow-y: auto;
+}
+.textwrap{
+    position: absolute;
+    width: 90%;
+    right: 1em  !important;
+}
+.text{
+    padding: 2.5em;
+}
+.title{
+    text-indent: 0; 
+    margin-bottom: 0;
+    font-size: 3em;
+    border-bottom: .01em solid;
+    text-align: left;
+    line-height: normal;
+}
+.subhead{
+    font-family: 'Libre Franklin', sans-serif;
+    text-indent: 0;
+    padding-bottom: 1em;
+    margin-bottom: 0;
+    font-size: 1.1em;
+    border-bottom: .01em solid ;
+    line-height: normal;
+    text-align: left;
+}
+p{
+    line-height: 1.5em;
+    text-indent: 1em;
+    font-size: .95em;
+    text-align: justify;
+}
+p a{
+    text-decoration: none;
+    color: #6074a2;
+}
+.popquote{
+    font-size: 1.5em;
+    width: 45%;
+    float: right;
+    line-height: 1.1em;
+    padding: .5em;
+    text-align: left;
+    color: #6074a2;
+}
+.popquote2{
+    font-size: 1.5em;
+    width: 35%;
+    float: left;
+    line-height: 1.1em;
+    padding: .5em;
+    text-align: left;
+    color: #6074a2;
+}
+.sub{
+    font-size: 1.5em;
+    float: left;
+    color: #6074a2;   
+}
+.img{
+    position: absolute;
+    top: 2em;
+    width: 49%;
+    height: 81.9vh;
+    left: 3.2em;
+    padding: 2em;
+    background-color: #ffffff;
+}
+.imgs{
+    display: block;
+    margin: auto;
+    padding: 0;
+    width: 97%;
+}
+.imgs div{
+    display: block;
+    margin: auto;
+    max-width: 100%;
+    height: 36em;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.imgs p{
+    float: right !important;
+    text-align: right !important;
+    max-width: 25%;
+    margin: 0;
+    padding: 0;
+    font-size: .9em;
+    font-family: 'Raleway', sans-serif;
+}
+.imgs cite{
+    float: left;
+    max-width: 70%;
+    font-style: italic;
+    font-family: 'Raleway', sans-serif;
+}
+.img button{
+    cursor: pointer;
+    background-color: #000000;
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+    padding: 16px;
+    font-size: 1.4em;
+    color: #ffffff;
+    border: none;
+    z-index: 40;
+}
+.right{
+    position: absolute;
+    top: 50%;
+    right: 0 !important;
+}
+.left{
+    position: absolute;
+    top: 50%;
+    left: 0 !important;
+}
+.quote{
+    display: block;
+    margin: auto;
+    font-size: .9em;
+    text-align: left;
+    text-indent: 0;
+    width: 90%;
+}
+.credit{
+    border-top: .001em solid;
+    font-size: .9em;
+}
+.footer{
+    position:relative;
+    bottom: 0;
+    height: 5em;
+    width: 100%;
+    background-color: #ffffff;
+    display: block;
+    text-align: center;
+}
+.social{
+    display: inline-block;
+    position: relative;
+    top: .8em;
+}
+.social img{
+    width: 2.3em;
+}
+#log{
+    display:block;
+    position: fixed;
+    top: 0;
+    right: 1em;
+    background-color: #131418;
+    width: 5em;
+    height: 5em; 
+    z-index: 50;
+    color: #95969D;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+}
+
+header{
+    display:block;
+    position: fixed;
+    top: 0;
+    right: -20em;
+    background-color: #131418;
+    width: 20em;
+    height: auto; 
+    z-index: 50;
+    color: #95969D;
+}
+
+
+.navbuttonanimation{
+    animation:navbutton .75s ;
+}
+.navmenuanimation{
+    animation:navmenu .75s ;
+}
+.navmenuanimationrev{
+    animation:navmenu .75s  reverse ;
+}
+.navbuttonanimationrev{
+    animation:navbutton .75s  reverse;
+}
+@keyframes navbutton {
+    from {right: 1em;}
+    to {right: 20em;}
+}
+
+
+@keyframes navmenu {
+    from {right: -20em;}
+    to {right: 0em;}
+}
+
+.dropcont{
+    display: none;
+    position: relative;
+    padding: 0;
+    list-style-type: none;
+}
+.dropcont li a{
+    background-color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    padding: 1.5em;
+    width: 10em;
+    color: #131418
+}
+#nav{
+    float: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+    padding-top: .9em;
+    padding-right: 2.5em;
+}
+.nav{
+    list-style-type: none;
+    margin: 0;
+    background-color: #131418;
+    font-family: 'Raleway', sans-serif;
+}
+.nav li{
+    display: wrap;
+}
+.nav li a{
+    display: block;
+    color: #95969D;
+    text-decoration: none;
+    padding: 1.4em 1em 1.4em .5em;
+    text-align: center;
+    cursor: pointer;
+}
+.nav li a:hover{
+    color: #585858;
+}
+.email{
+    padding: 1em;
+    border-right: .02em solid;
+    text-decoration: none;
+    color: #000000;
+}
+#vnav{
+    font-family: 'Raleway', sans-serif;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    margin: 0;
+    background-color: #000000;
+    padding: 0;
+    z-index: 50;
+}
+
+#vnav ul{
+    list-style-type: none;
+    margin: 0;
+    padding:0
+} 
+#vnav li{
+    display: inline-block;
+    font-size: .9em;
+}
+#vnav li a{
+    color: #ffffff;
+    display: block;
+    padding: .7em;
+    text-decoration: none;
+}
+#vnav li a:hover{
+    color: #6074a2;
+}
+#vcont{
+    padding: 0;
+    margin: 0;
+    display: none;
+}
+#vcont:target{
+    display: inline-block;
+}
+#vclose:target #vcont{
+    display: none;
+}
+@media only screen and (max-width : 700px) {
+    html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+    header{
+        position: absolute;
+    }
+    #nav{
+        padding: .8em;
+        font-size: .9em;
+    }
+   
+    #navi{
+		display:inline-block;
+	}
+	
+    .nav .dropcont, .nav:active .dropcont{
+        display: none;
+        position: relative;
+		background: #f7f6f6;
+        padding: 0;
+		width: 100%;
+	}
+    .dropcont li a{
+        width: auto;
+    }
+	#nav li{
+		text-align: center;
+		width: 95%;
+		padding: .1em 0;
+		margin: 0;
+	}
+    .dropdown:hover .dropcont{
+        display: block;
+    }
+	#nav:hover .nav{
+		display: block;
+	} 
+    .img{
+        position: relative;
+        top: 0em;
+        left: 0;
+        width: 80%;
+        height: 30%;
+    }
+    .imgs div{
+        height: 15em;
+    }
+    .cwrap{
+        position: relative;
+        top: 0;
+        right: 0;
+        width: 100%;
+    }
+    #box{
+        position: relative;
+        float: left;
+        margin-top: 0em;
+        width: 100%;
+        overflow-y: visible;
+        padding-top: 0;
+    } 
+    .text{
+        margin: 0;
+        padding: .5em;
+    }
+    .title{
+        margin-top: .2em;
+    }
+}

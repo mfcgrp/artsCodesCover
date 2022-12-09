@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<html lang="en">
+  <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>arts.codes</title>
+         <link rel="icon" href="img/artsdotcodeslogo.png" type="image/gif">
+
+        <!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+    <meta property="og:url"           content="http://arts.codes" />
+      <meta property="og:type"          content="website" />
+      <meta property="og:title"         content="arts.codes" />
+      <meta property="og:description"   content="arts.codes is a platform focusing on multiple forms of art with computational and algorithmic underpinnings. It is a journal inclusive of the many digital/emerging media applications of today while also indexing historical works that are neither digital or electronic, but employ more traditional mediums or applications built with mathematical systems. arts.codes serves as a bimonthly digital journal and an annual printed publication presenting interviews with artists of all stripes, and reviews of exhibitions, performances and compositions. It is also a platform for open source distribution and creative sharing—where artists, designers and engineers share frameworks, techniques, code and methodologies with step-by-step explanatory articles." />
+      <meta property="og:image"         content="http://arts.codes/articles/vol1/article7/img/background.png" />
+
+     <link rel="stylesheet" type="text/css" href="style.css">
+     <link href="https://fonts.googleapis.com/css?family=Libre+Franklin:500|Playfair+Display|Raleway:300" rel="stylesheet">
+
+
+
+		<style>
+			body {
+				color: #95969D;
+				font-family:sans-serif;
+				font-size:13px;
+				text-align:center;
+				background-color:#000000;
+				margin: 0px;
+				overflow: hidden;
+			}
+            #container {
+                position:relative;
+                height:10%
+            }
+
+			#info {
+				position: absolute;
+				top: 0px; width: 100%;
+				padding: 5px;
+			}
+
+			a {
+
+				color: #a06851;
+			}
+
+            .inputClass {
+                position: fixed;
+                font-size: 25px;
+                background:rgba(255,255,255,0.9);
+                top: 70%;
+                width: 85%;
+                border: none;
+                margin-left: 5%;
+                margin-right: 5%;
+                padding: 12px 20px;
+
+            }
+            .inputClass : focus {
+                border: none;
+                opacity:40%;
+
+            }
+            #logo{
+                position:absolute;
+                left:0px;
+                height:100%;
+            }
+            #loadin{
+                font-size: 10em;
+                height:100%;
+                line-height: 200px;
+            }
+            @media only screen and (max-width : 700px) {
+                #loadin{
+                    position: relative;
+                font-size: 5em;
+                height:100%;
+                top: 190px;
+                line-height: 200px;
+
+            }
+            }
+
+
+
+		</style>
+	</head>
+    <script src="./js/three.js"></script>
+    <script src="./js/objects/Reflector.js"></script>
+    <script src="./js/objects/Refractor.js"></script>
+    <script src="./js/objects/Water2.js"></script>
+    <script src="./js/Detector.js"></script>
+    <script src="./js/OBJLoader.js"></script>
+    <script src="./js/OBJLoader2.js"></script>
+    <script src="./js/OrbitControls.js"></script>
+    <body>
+       <div id='main'>
+        <div id="log"><img id="logo" href="/img/logo2.jpg"></div>
+         <header id="h">
+
+          <nav id="nav">
+              <!-- fade out for mobile menu -->
+              <div id="fade"></div>
+          <a id="nav1" href="#nav"></a>
+          <ul class="nav">
+
+           <li class="dropdown" ><a id="articles">Projects</a>
+           <ul class="dropcont" id='dd'>
+               <li><a href="/src/glassmenagerie/glassmenagerie.html">Glass Menagerie</a></li>
+               <li><a href="/src/hacek/hacek.html">háček</a></li>
+               <li><a target="_blank" href="/other/ResonantBook.pdf">Resonant Structures</a></li>
+           </ul>
+           </li>
+
+            <li><a href="/src/about.html" rel="author">About</a></li>
+
+              <li><a href="/other/more.html">News</a></li>
+                <li ><a href="/src/articles.html">Articles</a>
+
+           </li>
+              <li id="close"><a href="#nav1">X</a></li>
+          </ul>
+          </nav>
+      </header>
+        <div id="loadin"></div>
+           </div>
+		<script>
+
+var n = document.getElementById('log');
+var open = false;
+var aopen = false;
+var popen = false;
+//n.onclick = open ? peekabye : peekaboo;
+
+n.addEventListener("click", function(e){
+
+  e.preventDefault;
+  var x = document.getElementById("h");
+
+  if (!open){
+  // -> removing the class
+   n.classList.remove("navbuttonanimation");
+   n.classList.remove("navbuttonanimationrev");
+
+   x.classList.remove("navmenuanimation");
+   x.classList.remove("navmenuanimationrev");
+
+   void x.offsetWidth;
+   void n.offsetWidth;
+
+   n.classList.add("navbuttonanimation");
+   x.classList.add("navmenuanimation");
+
+   x.style.right="0em";
+   n.style.right = "20em";
+
+   open = true;
+  }else{
+   n.classList.remove("navbuttonanimationrev");
+   n.classList.remove("navbuttonanimation");
+
+   x.classList.remove("navmenuanimation");
+   x.classList.remove("navmenuanimationrev");
+
+   void n.offsetWidth;
+   void x.offsetWidth;
+
+   n.classList.add("navbuttonanimationrev");
+   x.classList.add("navmenuanimationrev");
+
+   n.style.right = "1em";
+   x.style.right = "-20em";
+   open = false;
+    }
+}, false);
+
+var articles = document.getElementById('articles');
+var projects = document.getElementById('projects');
+
+articles.addEventListener("click",function(e){
+    e.preventDefault;
+    aopen = aopen? false:true;
+   var drop = document.getElementById("dd");
+    drop.style.display = aopen ? 'block':'none';
+},false);
+
+var motionheader = document.getElementById('h');
+
+
+
+var x = document.createElement("INPUT");
+    x.setAttribute("type", "text");
+    x.setAttribute("value", "type some random stuff to see what happens! :)");
+    x.setAttribute("class","inputClass");
+    x.style.display =  'none';
+		if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
+		var scene, camera, clock, renderer, water, wireframecolor;
+		var params = {
+			color: '#ffffff',
+			scale: 4,
+			flowX: 1,
+			flowY: 1
+		};
+window.addEventListener("load",function() {
+    setTimeout(function(){
+        // This hides the address bar:
+        window.scrollTo(0, 1);
+    }, 0);
+});
+		init();
+		animate();
+		function init() {
+			// scene
+			scene = new THREE.Scene();
+            scene.background = new THREE.Color( 0xc5ebf9 );
+			// camera
+			camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 0.1, 1000 );
+			camera.position.set( 10, 1, 55 );
+			camera.lookAt( scene.position );
+			// clock
+			clock = new THREE.Clock();
+
+			// ground
+			var groundGeometry = new THREE.PlaneBufferGeometry( 2000, 2000 );
+			var groundMaterial = new THREE.MeshStandardMaterial( { roughness: 0.8, metalness: .9 } );
+			var ground = new THREE.Mesh( groundGeometry, groundMaterial );
+			ground.rotation.x = Math.PI * - 0.5;
+			scene.add( ground );
+			var textureLoader = new THREE.TextureLoader();
+			textureLoader.load( 'textures/mercurytexture.png', function( map ) {
+				map.wrapS = THREE.RepeatWrapping;
+				map.wrapT = THREE.RepeatWrapping;
+				map.anisotropy = 16;
+				map.repeat.set( 4, 4 );
+				groundMaterial.map = map;
+				groundMaterial.needsUpdate = true;
+			} );
+			// water
+			var waterGeometry = new THREE.PlaneBufferGeometry( 2000, 2000 );
+			water = new THREE.Water( waterGeometry, {
+				color: params.color,
+				scale: params.scale,
+				flowDirection: new THREE.Vector2( params.flowX, params.flowY ),
+				textureWidth: 1024,
+				textureHeight: 1024
+			} );
+			water.position.y = 0.1;
+			water.rotation.x = Math.PI * - 0.5;
+
+            var underwater = new THREE.Water( waterGeometry, {
+				color: params.color,
+				scale: params.scale,
+				flowDirection: new THREE.Vector2( params.flowX, params.flowY ),
+				textureWidth: 1024,
+				textureHeight: 1024
+			} );
+            underwater.position.y = -0.1;
+            underwater.rotation.x = Math.PI *  0.5;
+
+			scene.add( water );
+            scene.add(underwater);
+			// skybox
+
+			// light
+			var ambientLight = new THREE.AmbientLight( 0xcccccc, 0.4 );
+			scene.add( ambientLight );
+			var directionalLight = new THREE.DirectionalLight( 0xffffff, 0.6 );
+			directionalLight.position.set( - 1, 1, 1 );
+			scene.add( directionalLight );
+			// renderer
+			renderer = new THREE.WebGLRenderer( { antialias: true } );
+			renderer.setSize( window.innerWidth, window.innerHeight +50 );
+			renderer.setPixelRatio( window.devicePixelRatio );
+			document.body.appendChild( renderer.domElement );
+
+			var loader = new THREE.FontLoader();
+				loader.load( 'helvetiker_regular.typeface.json', function ( font ) {
+					var xMid, text;
+					var textShape = new THREE.BufferGeometry();
+					var color = 0x000000;
+					var matDark = new THREE.LineBasicMaterial( {
+						color: color,
+						side: THREE.DoubleSide
+					} );
+					var matLite = new THREE.MeshBasicMaterial( {
+						color: color,
+						transparent: true,
+						opacity: 0.4,
+						side: THREE.DoubleSide
+					} );
+					var message = "arts.codes";
+					var shapes = font.generateShapes( message, 5, 2 );
+					var geometry = new THREE.ShapeGeometry( shapes );
+					geometry.computeBoundingBox();
+					xMid = - 0.5 * ( geometry.boundingBox.max.x - geometry.boundingBox.min.x );
+					geometry.translate( xMid, 0, 0 );
+					// make shape ( N.B. edge view not visible )
+					textShape.fromGeometry( geometry );
+					text = new THREE.Mesh( textShape, matLite );
+					text.position.z = - 10;
+					scene.add( text );
+					// make line shape ( N.B. edge view remains visible )
+					var holeShapes = [];
+					for ( var i = 0; i < shapes.length; i ++ ) {
+						var shape = shapes[ i ];
+						if ( shape.holes && shape.holes.length > 0 ) {
+							for ( var j = 0; j < shape.holes.length; j ++ ) {
+								var hole = shape.holes[ j ];
+								holeShapes.push( hole );
+							}
+						}
+					}
+					shapes.push.apply( shapes, holeShapes );
+					var lineText = new THREE.Object3D();
+					for ( var i = 0; i < shapes.length; i ++ ) {
+						var shape = shapes[ i ];
+						var points = shape.getPoints();
+						var geometry = new THREE.BufferGeometry().setFromPoints( points );
+
+						geometry.translate( xMid, 0, 0 );
+						var lineMesh = new THREE.Line( geometry, matDark );
+						lineText.add( lineMesh );
+					}
+					scene.add( lineText );
+				} ); //end load function
+                // instantiate a loader
+var loader2 = new THREE.OBJLoader2();
+//create material
+            var datasetMaterial = new THREE.MeshPhongMaterial({
+                reflectivity:1,
+                wireframe: true,
+
+            });
+            datasetMaterial2 = new THREE.MeshPhongMaterial({
+                reflectivity:1,
+                wireframe: false,
+
+            });
+
+// load a resource
+loader2.load(
+	// resource URL
+	'js/datareduced_95percent.obj',
+	// called when resource is loaded
+	function ( object ) {
+        var alpha = 10; var beta = 10; var gamma = 10;
+        object.traverse( function ( child ) {
+
+        if ( child instanceof THREE.Mesh ) {
+            wireframecolor = datasetMaterial.color;
+           wireframecolor = new THREE.Color(alpha,beta,gamma)
+            child.material = datasetMaterial;
+
+
+        }
+
+    } );
+
+        object.name="Landscape";
+        object.position.y =-10;
+        object.position.x=-35;
+        object.position.z=-50;
+        object.scale.x = 50;
+        object.scale.y = 10;
+        object.scale.z = 10;
+		scene.add( object );
+         document.body.appendChild(x);
+	},
+	// called when loading is in progresses
+	function ( xhr ) {
+       document.getElementById('loadin').innerHTML= ( Math.round(xhr.loaded / xhr.total * 100) )+"% Loaded";
+
+		console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
+
+         if(Math.round(xhr.loaded / xhr.total * 100) >= 100){
+             var child = document.getElementById('loadin');
+             var parent = document.getElementById('main');
+             parent.removeChild(child);
+         }
+
+	},
+	// called when loading has errors
+	function ( error ) {
+
+		console.log( 'An error happened' );
+
+	}
+);
+            loader2.load(
+	// resource URL
+	'js/datareduced_95percent.obj',
+	// called when resource is loaded
+	function ( object ) {
+        var alpha = 10; var beta = 10; var gamma = 10;
+        object.traverse( function ( child ) {
+
+        if ( child instanceof THREE.Mesh ) {
+
+           datasetMaterial.color = new THREE.Color(0,255,255)
+            child.material = datasetMaterial2;
+
+
+        }
+
+    } );
+
+        object.name="landscape2";
+        object.position.y =-10;
+        object.position.x=-35;
+        object.position.z=-50;
+        object.scale.x = 50;
+        object.scale.y = 10;
+        object.scale.z = 10;
+		scene.add( object );
+	},
+	// called when loading is in progresses
+	function ( xhr ) {
+
+		console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
+
+	},
+	// called when loading has errors
+	function ( error ) {
+
+		console.log( 'An error happened' );
+
+	}
+);
+			//
+			controls = new THREE.OrbitControls( camera, renderer.domElement );
+			//
+			window.addEventListener( 'resize', onResize, false );
+		}
+		function onResize() {
+			camera.aspect = window.innerWidth / window.innerHeight;
+			camera.updateProjectionMatrix();
+			renderer.setSize( window.innerWidth , window.innerHeight+50 );
+		}
+		function animate() {
+			requestAnimationFrame( animate );
+			render();
+		}
+		function render() {
+			var delta = clock.getDelta();
+			var landscape = scene.getObjectByName("Landscape");
+            var landscape2 = scene.getObjectByName("landscape2");
+            landscape.scale.needsUpdate = true;
+            var v = String(x.value);
+            var l = "";var n = [];
+            for(var i = 0; i< v.length;i++){
+                if(v[i]=="a"||v[i]=="b"||v[i]=="c"||v[i]=="d"||v[i]=="e"||v[i]=="f"||!isNaN(parseInt(v[i])) ){
+
+                       landscape.scale.x +=.01;
+                 landscape2.scale.z +=.01;
+
+                   }
+                if(!isNaN(parseInt(v[i]))){
+                    if(parseInt(v[i])%2==1){
+                    camera.position.set( camera.position.x+parseInt(v[i]), camera.position.y+parseInt(v[i]), camera.position.z+parseInt(v[i]) );
+			        camera.lookAt( scene.position );}else if(parseInt(v[i])%2==0){
+                         camera.position.set( camera.position.x-parseInt(v[i]), camera.position.y-parseInt(v[i]), camera.position.z-parseInt(v[i]) );
+			        camera.lookAt( scene.position );
+                    }
+                }
+                if(v[i]=="a"||v[i]=="b"||v[i]=="c"||v[i]=="d"||v[i]=="e"||v[i]=="f"||!isNaN(parseInt(v[i]))){
+                     landscape.scale.x +=.01;
+                 landscape2.scale.y +=.01;
+                }
+                if(v[i]=="h"||v[i]=="u"||v[i]=="p"||v[i]=="k"||v[i]=="i"||v[i]!="m"||!isNaN(parseInt(v[i]))){
+                    //landscape.scale.x =5;
+                    // landscape.scale.y =1;
+                    // landscape.scale.z =1;
+                    // landscape2.scale.x =5;
+                     //landscape2.scale.y =1;
+                    // landscape2.scale.z =1;
+                }
+            }
+            if(landscape && landscape.scale.y < x.value.length*100 && landscape.scale.y ==landscape2.scale.y ){
+                 landscape.scale.y +=.01;
+                 landscape2.scale.y +=.01;
+            }
+            if(landscape && landscape.scale.y < x.value.length*100 && landscape.scale.y !=landscape2.scale.y ){
+
+                 landscape2.scale.y +=.1;
+            }
+            if(landscape && landscape.scale.y > x.value.length*100){
+                 //landscape.scale.y -=.1;
+                 landscape2.scale.y -=.1;
+            }
+
+
+
+			renderer.render( scene, camera );
+
+		}
+
+    </script>
+
+    </body>
+        </html>
